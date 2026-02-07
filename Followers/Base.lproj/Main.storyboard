@@ -1,24 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UKk-Ef-Rau">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--SearchViewController-->
+        <scene sceneID="TOj-u1-RWb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController title="SearchViewController" id="UKk-Ef-Rau" customClass="SearchViewController" customModule="Followers" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="px6-hE-yQx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GitHub-logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="uZs-WD-4m9">
+                                <rect key="frame" x="71.666666666666686" y="199" width="250" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="4k1-Yi-Rix"/>
+                                    <constraint firstAttribute="height" constant="150" id="ZnL-mw-hyk"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0q-RA-OzV">
+                                <rect key="frame" x="100" y="409" width="193" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOW-4o-bz7">
+                                <rect key="frame" x="100" y="583" width="193" height="35"/>
+                                <color key="backgroundColor" red="0.40334531232703719" green="0.78209832702020199" blue="0.41445211876729438" alpha="0.17766970198675497" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.39607840779999998" green="0.77254903320000001" blue="0.40392160420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" Get users" cornerStyle="medium">
+                                    <imageReference key="image" image="person.3" catalog="system" symbolScale="small"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="getFollowersTapped:" destination="UKk-Ef-Rau" eventType="touchUpInside" id="6pD-Ja-N29"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rlv-wl-cUa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P0q-RA-OzV" firstAttribute="centerX" secondItem="px6-hE-yQx" secondAttribute="centerX" id="2Ih-8i-bWD"/>
+                            <constraint firstItem="JOW-4o-bz7" firstAttribute="top" secondItem="P0q-RA-OzV" secondAttribute="bottom" constant="140" id="2ZC-7n-IFu"/>
+                            <constraint firstItem="P0q-RA-OzV" firstAttribute="leading" secondItem="rlv-wl-cUa" secondAttribute="leading" constant="100" id="8Jj-G7-KTb"/>
+                            <constraint firstItem="uZs-WD-4m9" firstAttribute="centerX" secondItem="px6-hE-yQx" secondAttribute="centerX" id="GiS-vx-OZi"/>
+                            <constraint firstItem="P0q-RA-OzV" firstAttribute="top" secondItem="uZs-WD-4m9" secondAttribute="bottom" constant="60" id="Hoj-XJ-7LE"/>
+                            <constraint firstItem="JOW-4o-bz7" firstAttribute="leading" secondItem="rlv-wl-cUa" secondAttribute="leading" constant="100" id="Pyc-df-Xid"/>
+                            <constraint firstItem="rlv-wl-cUa" firstAttribute="trailing" secondItem="JOW-4o-bz7" secondAttribute="trailing" constant="100" id="Upj-QB-hc8"/>
+                            <constraint firstItem="uZs-WD-4m9" firstAttribute="top" secondItem="rlv-wl-cUa" secondAttribute="top" constant="140" id="aO8-CQ-YHR"/>
+                            <constraint firstItem="rlv-wl-cUa" firstAttribute="trailing" secondItem="P0q-RA-OzV" secondAttribute="trailing" constant="100" id="u7y-W1-qOQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getFollowersButton" destination="JOW-4o-bz7" id="0IU-RB-mp6"/>
+                        <outlet property="usernameTextField" destination="P0q-RA-OzV" id="Mmk-DC-Q70"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vz4-9c-ZXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="833" y="348"/>
+        </scene>
+        <!--Followers View Controller-->
+        <scene sceneID="mDd-J8-v4N">
+            <objects>
+                <viewController storyboardIdentifier="FollowersViewController" id="ITY-Mv-gsN" customClass="FollowersViewController" customModule="Followers" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="GaI-df-v5X">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2ew-zw-frj">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="8Bs-yY-dBB">
+                            <rect key="frame" x="0.0" y="-59" width="393" height="852"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FollowerCell" id="soM-0H-xgC" customClass="FollowerCell" customModule="Followers" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uek-Ly-HLd">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWi-EE-Eek">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="aWi-EE-Eek" secondAttribute="height" multiplier="1:1" id="sgc-Hs-49r"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LQ-dg-Y8E">
+                                            <rect key="frame" x="4" y="58" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aWi-EE-Eek" firstAttribute="trailing" secondItem="3LQ-dg-Y8E" secondAttribute="trailing" constant="4" id="AQb-Dg-qon"/>
+                                        <constraint firstItem="3LQ-dg-Y8E" firstAttribute="leading" secondItem="aWi-EE-Eek" secondAttribute="leading" constant="4" id="At9-IL-jIB"/>
+                                        <constraint firstItem="aWi-EE-Eek" firstAttribute="leading" secondItem="uek-Ly-HLd" secondAttribute="leading" id="ChZ-7w-3nO"/>
+                                        <constraint firstAttribute="trailing" secondItem="aWi-EE-Eek" secondAttribute="trailing" id="GtP-W6-bwJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="3LQ-dg-Y8E" secondAttribute="bottom" id="VBr-JN-Ono"/>
+                                        <constraint firstItem="3LQ-dg-Y8E" firstAttribute="top" secondItem="aWi-EE-Eek" secondAttribute="bottom" constant="8" id="boX-Uo-wlz"/>
+                                        <constraint firstItem="aWi-EE-Eek" firstAttribute="top" secondItem="uek-Ly-HLd" secondAttribute="top" id="ofe-Ia-gog"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                    </collectionView>
+                    <connections>
+                        <outlet property="collectionView" destination="GaI-df-v5X" id="eaM-cJ-ZAy"/>
+                        <outlet property="spinner" destination="8Bs-yY-dBB" id="6v5-Fq-bHk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbp-yc-bqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="335"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GitHub-logo-1" width="2000" height="1156"/>
+        <image name="person.3" catalog="system" width="128" height="66"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
